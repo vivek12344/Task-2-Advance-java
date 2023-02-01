@@ -1,0 +1,109 @@
+//video 1 
+//Exception Handling:-
+//The Exception Handling in Java is one of the powerful mechanism to handle 
+//the runtime errors so that the normal flow of the application can be maintained.
+
+
+import java.util.Scanner;
+
+public class ExeptionTest {
+
+	    public static void main(String[] args){
+
+	        System.out.println("Welcom to Max Heart Rate Calculator");
+
+	        Scanner sc = new SCaneer(Sysytem.in);
+
+	        System.out.println("ENter your age: ");
+	        int age = sc.nextInt();
+
+	        int maxHeartRate = 220 - age;
+
+	        System.out.println("Your max heart rate is: " + maxHeartRate);
+	    }
+
+}
+
+
+//try and catch method
+
+import java.util.Scanner;
+
+public class ExeptionTest {
+
+	    public static void main(String[] args){
+
+	    	try {
+	        System.out.println("Welcom to Max Heart Rate Calculator");
+
+	        Scanner sc = new SCaneer(Sysytem.in);
+
+	        System.out.println("ENter your age: ");
+	        int age = sc.nextInt();
+
+	        int maxHeartRate = 220 - age;
+
+	        System.out.println("Your max heart rate is: " + maxHeartRate);
+	    } catch(InputMismtachException e){
+
+	    	System.out.println("Please entre Integer only: ");
+
+	    }
+	 }
+
+}
+
+
+//throw exception
+
+import java.util.Scanner;
+
+public class throwExceptionTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter your age: ");
+		
+		int age = sc.nextInt();
+		
+		if(age <= 0) {
+			
+			throw new NumberFormatException();
+		} else if(age >= 120) {
+			
+			throw new NumberFormatException();
+			
+		}
+		
+		System.out.println("Max HeartRate is:" + (220 - age));
+
+	}
+
+}
+
+
+
+//chained Exception
+
+public class ChainedExceptions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter your height in cms: ");
+		
+		float height = sc.nextFloat();
+		
+		double idealWeight = 50 + (0.91 + (height - 170));
+		
+		System.out.println("Your ideal height is: " + idealWeight);
+	} catch(InputMismatchException e) {
+		throw new NumberFormatException();
+	}
+
+	}
+
+}
