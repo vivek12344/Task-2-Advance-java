@@ -1,0 +1,72 @@
+//Java ArrayList class uses a dynamic array for storing the elements.It 
+//is like an array, but there is no size limit. We can add or remove 
+//elements anytime.
+
+//Examole of Array List
+
+import java.util.ArrayList;
+
+public class MyArrayListTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<E> list = new ArrayList();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.add(5);
+		
+		System.out.println(list.get(1));
+		System.out.println(list.get(2));
+		System.out.println(list.get(3));
+		
+		list.add(1, 6);
+		
+		System.out.println(list.get(1));
+		
+    //addAll 
+		ArrayList list2 = new ArrayList();
+		list.addAll(list2);
+		
+		System.out.println(list2.get(0));
+		System.out.println(list2.get(1));
+		System.out.println(list2.get(3));
+		
+		list2.clear();
+		
+    //try and catch for index out of bound
+		try {
+			System.out.println(list.get(0));
+			System.out.println(list.get(1));
+			System.out.println(list.get(3));
+		} catch(IndexOutOfBoundException e){
+			
+			System.out.println("List is cleared");
+			
+		}
+		
+		ArrayList listClone = (ArrayList) list.clone();
+		
+		System.out.println("Clear the list after cloning");
+		
+		list.clear();
+		
+		System.out.println("Printing the clone of the list");
+		System.out.println(listClone.get(0));
+		System.out.println(listClone.get(1));
+		System.out.println(listClone.get(3));
+		
+    //contains
+		System.out.println("Checking if it contains 6");
+		boolean res = listClone.contains(6);
+		if(result) {
+			System.out.println("6 Exists");
+		}else {
+			System.out.println("6 Doesn't Exists");
+		}
+		
+	}
+
+}
