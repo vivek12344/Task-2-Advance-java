@@ -1,0 +1,103 @@
+//Video Number 6 and 7th
+
+//ArrayList using Parllel Processing using SplIterator
+
+import java.util.ArrayList;
+import java.util.Spliterator;
+
+public class MySpliteratorTest
+{
+   public static void main(String[] args) 
+   {
+     
+      ArrayList<String> fbPosts = new ArrayList<String>();
+
+      fbPosts.add("Post1");
+      fbPosts.add("Post2");
+      fbPosts.add("Post3");
+      fbPosts.add("Post4");
+      fbPosts.add("Post5");
+      fbPosts.add("Post6");
+     
+      //Parallely process the lists using Spliterator
+
+      Spliterator<String> splIterator = fbPosts.spliterator();
+      Spliterator<String> splIterator2 = splIterator.trySplit();
+      
+      System.out.println("SPL1 Estimated size of data: "+ splIterator.estimateSize());
+      System.out.println("SPL1 Exact Size: "+ splIterator.getExactSizeIfKnown());
+      
+      splIterator.forEachRemaining(System.out::println);
+
+      System.out.println("SPL1 Estimated size of data: "+ splIterator.estimateSize());
+      System.out.println("SPL1 Exact Size: "+ splIterator.getExactSizeIfKnown());
+
+      System.out.println("SPL2 Estimated size of data: "+ splIterator2.estimateSize());
+      System.out.println("SPL2 Exact Size: "+ splIterator2.getExactSizeIfKnown());
+
+      splIterator2.forEachRemaining(System.out::println);
+
+      System.out.println("SPL2 Estimated size of data: "+ splIterator2.estimateSize());
+      System.out.println("SPL2 Exact Size: "+ splIterator2.getExactSizeIfKnown());
+
+     }
+ }
+
+
+//Java ArrayList.toArray
+
+//The toArray() method is used to get an array which contains all the elements in ArrayList 
+//object in proper sequence (from first to last element);
+
+//EXAMPLE==
+
+import java.util.*;
+
+public class test {
+   public static void main(String[] args) {
+      
+    // create an empty array list with an initial capacity
+    ArrayList<String> color_list = new ArrayList<String>(5);
+
+    // use add() method to add values in the list
+    color_list.add("White");
+    color_list.add("Black");
+    color_list.add("Red");
+    color_list.add("White");
+	color_list.add("Yellow");
+	
+    System.out.println("Size of the color_list: " + color_list.size());
+
+    // Print the colors in the list
+    for (String value : color_list){
+      System.out.println("Color = " + value);
+    }  
+   // Create an array from the ArrayList
+    String color_list2[] = new String[color_list.size()];
+    color_list2 = color_list.toArray(color_list2);
+         
+   // Display the contents of the array
+    System.out.println("Printing elements of color_list2:"); 
+    for (String color : color_list2) {
+      System.out.println("Color = " + color);
+    }
+  }
+}
+
+
+/**** Output:
+
+F:\java>javac test.java
+F:\java>java test
+Size of the color_list: 5
+Color = White
+Color = Black
+Color = Red
+Color = White
+Color = Yellow
+Printing elements of color_list2:
+Color = White
+Color = Black
+Color = Red
+Color = White
+Color = Yellow  ****/
