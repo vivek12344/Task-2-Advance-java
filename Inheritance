@@ -1,0 +1,90 @@
+//video number -12
+
+
+//Example of inheritance--
+
+public class Bicycle {
+       
+      public int cadence;
+      public int gear;
+      public int speed;
+
+      public Bicycle(int startCadence , int startSpeed , int startGear) {
+              gear = startGear;
+              cadence = startCadence;
+              speed = startSpeed;
+       }
+
+      public void aetCadence(int newValue) {
+              cadence = neaValue;
+       }
+    
+      public void setGear(int newValue) {
+               gear = newValue;
+       }
+
+      public void applyBrake(int decrement) {
+               speed -= decrement;
+       }
+ 
+      public void speedUp(int increment) {
+               speed += increment;
+       }
+}
+
+//A class declaration of a MountainBike class that is a subclass of Bicycle might look like this:
+
+
+public class MountainBike extends Bicycle {
+
+      public int seatHeight;
+
+      public mountainBike(int startHeight , int startCadence, int startSpeed, int startGear) {
+       
+             super(startCadence, startSpeed, startGear);
+       
+              seatHeight = startHeight;
+       }
+ 
+      public void setHeight(int newValue) {
+              seatHeight = newValue;
+
+       }
+}
+
+
+
+
+//Another Example 
+
+
+public HeartMonitor {
+ 
+     public String maximumHearRate;
+    
+     public static void main(String[] args) {
+        
+          System.out.println(getMaxHeartRate(30));
+      }
+ 
+      public static int getMaxHeartRate(int age) {
+        int result = 0;
+        result = 220-age;
+        return result;
+      }
+
+}
+
+public class BMIMachine extends HeartMonitor{
+    
+     public static void main(String[] args) {
+      
+         System.out.println(getMaxHearRate());
+     }
+     //override
+     public static int getMaxxHeartRate(int age) {
+   
+          System.out.println("Method excuted from SubClass");
+          return 230-age;
+     }
+}
